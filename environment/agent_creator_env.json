@@ -1,0 +1,31 @@
+{
+  "id": "env_01FQZbWy6e1W35jBw1wToERD",
+  "type": "environment",
+  "name": "agent-creator-env",
+  "description": "",
+  "created_at": "2026-04-10T07:19:55.609487Z",
+  "updated_at": "2026-04-10T07:33:44.235802Z",
+  "archived_at": null,
+  "state": "active",
+  "config": {
+    "type": "cloud",
+    "packages": {
+      "type": "packages",
+      "pip": [],
+      "npm": [],
+      "apt": [],
+      "cargo": [],
+      "gem": [],
+      "go": []
+    },
+    "networking": {
+      "type": "unrestricted"
+    },
+    "init_script": "pip install anthropic -q && export ANTHROPIC_API_KEY=sk-ant-***MASKED*** && echo export ANTHROPIC_API_KEY=sk-ant-***MASKED*** >> /root/.bashrc && echo export ANTHROPIC_API_KEY=sk-ant-***MASKED*** >> /home/claude/.bashrc",
+    "environment": {
+      "ANTHROPIC_API_KEY": "sk-ant-***MASKED***"
+    }
+  },
+  "metadata": {},
+  "scope": "organization"
+}

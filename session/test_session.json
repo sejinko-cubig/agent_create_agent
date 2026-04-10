@@ -1,0 +1,52 @@
+{
+  "agent": {
+    "description": null,
+    "id": "agent_011CZukGG4YX1YKgG9YH9yYV",
+    "mcp_servers": [],
+    "model": {
+      "id": "claude-sonnet-4-6",
+      "speed": "standard"
+    },
+    "name": "LangGraph Analysis Creator",
+    "skills": [],
+    "system": "(see agent/langgraph_analysis_creator.json)",
+    "tools": [
+      {
+        "configs": [],
+        "default_config": {
+          "enabled": true,
+          "permission_policy": {
+            "type": "always_allow"
+          }
+        },
+        "type": "agent_toolset_20260401"
+      }
+    ],
+    "type": "agent",
+    "version": 1
+  },
+  "archived_at": null,
+  "created_at": "2026-04-10T08:06:54.338583Z",
+  "environment_id": "env_01FQZbWy6e1W35jBw1wToERD",
+  "id": "sesn_011CZukGK2t1xPspTug6cieh",
+  "metadata": {},
+  "resources": [],
+  "stats": {
+    "active_seconds": 214.27900000000002,
+    "duration_seconds": 1887.469637657
+  },
+  "status": "idle",
+  "title": "LangGraph Analysis Creator Test",
+  "type": "session",
+  "updated_at": "2026-04-10T08:29:27.318559Z",
+  "usage": {
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 0,
+      "ephemeral_5m_input_tokens": 60386
+    },
+    "cache_read_input_tokens": 203064,
+    "input_tokens": 18,
+    "output_tokens": 11330
+  },
+  "vault_ids": []
+}

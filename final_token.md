@@ -24,24 +24,28 @@
 | 2 | `sesn_011CZuhUDkNRyYgLgxnXq65c` | 2차 테스트 (SDK 시도) | Sonnet 4.6 | ~12,000 | ~4,000 |
 | 3 | `sesn_011CZuhkPs2d9SYJd3zFwNtb` | 3차 테스트 (SDK 재시도) | Sonnet 4.6 | ~10,000 | ~3,000 |
 | 4 | `sesn_011CZuhtqdYH1FZvtP941USS` | 4차 테스트 (curl 시도) | Sonnet 4.6 | ~12,000 | ~4,000 |
-| 5 | `sesn_011CZukGK2t1xPspTug6cieh` | **LangGraph Agent 테스트** (이탈 예측) | Sonnet 4.6 | ~25,000 | ~15,000 |
+| 5 | `sesn_011CZukGK2t1xPspTug6cieh` | **LangGraph Agent 테스트** (이탈 예측) | Sonnet 4.6 | 263,468 | 11,330 |
 
-## 토큰 사용량 요약 (추정)
+## 토큰 사용량 — Session 5 실측값 (API 응답 기반)
 
-| 항목 | 추정값 |
-|------|--------|
-| Input tokens | ~74,000 |
-| Output tokens | ~31,000 |
-| **총 토큰** | **~105,000** |
+| 항목 | 값 |
+|------|-----|
+| Input tokens | 18 |
+| Cache creation (5m ephemeral) | 60,386 |
+| Cache read | 203,064 |
+| Output tokens | 11,330 |
+| **총 토큰 (실 과금 기준)** | **~263,468 input + 11,330 output** |
+| 활성 시간 | 214초 (3.6분) |
+| 전체 세션 시간 | 1,857초 (31분) |
 
-> Session 5(LangGraph)는 600줄+ 코드 생성 + 도구 호출 7회 + 시스템 프롬프트가 길어서 토큰 소비가 큼
-
-## 비용 (한화)
+## 비용 (한화) — Session 5 실측 기준
 
 | 항목 | 단가 | 사용량 | USD | KRW (₩1,450/$ 기준) |
 |------|------|--------|-----|---------------------|
-| Input (Sonnet 4.6) | $3.00/MTok | ~74K | ~$0.222 | ~₩322 |
-| Output (Sonnet 4.6) | $15.00/MTok | ~31K | ~$0.465 | ~₩674 |
+| Input (Sonnet 4.6) | $3.00/MTok | 18 | ~$0.000 | ~₩0 |
+| Cache write | $3.75/MTok | 60,386 | ~$0.226 | ~₩328 |
+| Cache read | $0.30/MTok | 203,064 | ~$0.061 | ~₩88 |
+| Output (Sonnet 4.6) | $15.00/MTok | 11,330 | ~$0.170 | ~₩247 |
 | 인프라 (세션시간) | $0.08/hr | ~0.2hr (5세션 x ~2.5분) | ~$0.016 | ~₩23 |
 | **합계** | | | **~$0.703** | **~₩1,019** |
 
