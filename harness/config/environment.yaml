@@ -1,0 +1,24 @@
+# LangGraph Analysis Creator - 환경 설정
+
+runtime:
+  python: "3.11+"
+
+dependencies:
+  pip:
+    - anthropic>=0.90.0
+    - langgraph>=0.2.0
+    - langchain-anthropic>=0.3.0
+    - langchain-core>=0.3.0
+    - pyyaml>=6.0
+
+environment_variables:
+  required:
+    - ANTHROPIC_API_KEY
+  optional:
+    - LANGCHAIN_TRACING_V2  # LangSmith tracing
+    - LANGCHAIN_API_KEY
+
+managed_agent:
+  type: cloud
+  networking: unrestricted
+  init_script: "pip install anthropic langgraph langchain-anthropic pyyaml -q"

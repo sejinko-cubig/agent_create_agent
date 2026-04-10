@@ -1,0 +1,35 @@
+# LangGraph Analysis Creator - 모델 설정
+
+agents:
+  planner:
+    model: "claude-sonnet-4-6"
+    temperature: 0.0
+    max_tokens: 8000
+    description: "주제 분석 + 데이터 스키마 설계"
+
+  coder:
+    model: "claude-sonnet-4-6"
+    temperature: 0.0
+    max_tokens: 16000
+    description: "LangGraph 코드 생성"
+
+  qa:
+    model: "claude-sonnet-4-6"
+    temperature: 0.0
+    max_tokens: 8000
+    description: "코드 품질 검증"
+
+llm_nodes:
+  deep_analysis:
+    model: "claude-sonnet-4-6"
+    temperature: 0.3
+    description: "통계 결과 → LLM 심층 분석"
+
+  report_generation:
+    model: "claude-sonnet-4-6"
+    temperature: 0.2
+    description: "최종 리포트 생성"
+
+qa_loop:
+  max_iterations: 3
+  pass_threshold: "all 8 checks pass"
