@@ -1,8 +1,8 @@
 """
-LangGraph Analysis Pipeline Template
+LangGraph 분석 파이프라인 템플릿
 =====================================
 이 템플릿을 기반으로 주제별 분석 파이프라인을 생성합니다.
-Coder Agent가 이 구조를 따라 코드를 작성합니다.
+코딩 Agent가 이 구조를 따라 코드를 작성합니다.
 """
 
 from typing import TypedDict
@@ -13,7 +13,7 @@ import statistics
 
 
 # ============================================================
-# State Definition — 모든 노드가 공유하는 상태
+# 상태 정의 — 모든 노드가 공유하는 상태
 # ============================================================
 class AnalysisState(TypedDict):
     topic: str
@@ -25,15 +25,15 @@ class AnalysisState(TypedDict):
 
 
 # ============================================================
-# Sample Data — 주제에 맞게 15~20행 생성
+# 샘플 데이터 — 주제에 맞게 15~20행 생성
 # ============================================================
 SAMPLE_DATA: list[dict] = [
-    # Coder Agent가 주제에 맞는 샘플 데이터로 채움
+    # 코딩 Agent가 주제에 맞는 샘플 데이터로 채움
 ]
 
 
 # ============================================================
-# Node 1: validate_and_preprocess
+# 노드 1: 데이터 검증 및 전처리
 # ============================================================
 def validate_and_preprocess(state: AnalysisState) -> dict:
     print("[Node 1] 데이터 검증 및 전처리 시작...")
@@ -41,13 +41,13 @@ def validate_and_preprocess(state: AnalysisState) -> dict:
     # 1-A. 결측값 처리 (중앙값 대체)
     # 1-B. 범위/타입 검증
     # 1-C. Min-max 정규화
-    # 1-D. Composite Score 계산
-    # Coder Agent가 실제 로직으로 채움
+    # 1-D. 종합 점수 계산
+    # 코딩 Agent가 실제 로직으로 채움
     return {"cleaned_data": raw}
 
 
 # ============================================================
-# Node 2: statistical_analysis
+# 노드 2: 통계 분석
 # ============================================================
 def statistical_analysis(state: AnalysisState) -> dict:
     print("[Node 2] 통계 분석 시작...")
@@ -58,17 +58,17 @@ def statistical_analysis(state: AnalysisState) -> dict:
     # 2-D. 세그먼트 분류
     # 2-E. 범주형 분석
     # 2-F. 기술 통계
-    # Coder Agent가 실제 로직으로 채움
+    # 코딩 Agent가 실제 로직으로 채움
     return {"stat_result": {}}
 
 
 # ============================================================
-# Node 3: llm_deep_analysis
+# 노드 3: LLM 심층 분석
 # ============================================================
 def llm_deep_analysis(state: AnalysisState) -> dict:
     print("[Node 3] LLM 심층 분석 시작...")
     llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0.3)
-    # Coder Agent가 통계 결과를 프롬프트로 변환
+    # 코딩 Agent가 통계 결과를 프롬프트로 변환
     prompt = "..."
     response = llm.invoke(prompt)
     print("  ✅ LLM 심층 분석 완료")
@@ -76,12 +76,12 @@ def llm_deep_analysis(state: AnalysisState) -> dict:
 
 
 # ============================================================
-# Node 4: llm_generate_report
+# 노드 4: LLM 리포트 생성
 # ============================================================
 def llm_generate_report(state: AnalysisState) -> dict:
     print("[Node 4] LLM 리포트 생성 시작...")
     llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0.2)
-    # Coder Agent가 리포트 프롬프트 생성
+    # 코딩 Agent가 리포트 프롬프트 생성
     prompt = "..."
     response = llm.invoke(prompt)
     print("  ✅ 리포트 생성 완료")
@@ -89,7 +89,7 @@ def llm_generate_report(state: AnalysisState) -> dict:
 
 
 # ============================================================
-# Graph Construction
+# 그래프 구성
 # ============================================================
 def build_graph() -> StateGraph:
     graph = StateGraph(AnalysisState)
@@ -106,7 +106,7 @@ def build_graph() -> StateGraph:
 
 
 # ============================================================
-# Main
+# 메인 실행
 # ============================================================
 if __name__ == "__main__":
     print("=" * 60)

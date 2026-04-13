@@ -5,38 +5,38 @@
 
 ## 검증 체크리스트 (8항목)
 
-### 1. STRUCTURE
+### 1. 구조
 - [ ] StateGraph에 4개 필수 노드 존재 (validate, analyze, llm_analyze, report)
 - [ ] AnalysisState TypedDict에 6개 필수 키 존재
 
-### 2. COMPLETENESS
+### 2. 완성도
 - [ ] 모든 함수에 실제 로직 구현 (placeholder 없음)
 - [ ] "...", "pass", "TODO" 없음
 
-### 3. DATA
+### 3. 데이터
 - [ ] 샘플 데이터 15행 이상
 - [ ] TypedDict 스키마와 샘플 데이터 컬럼 일치
 - [ ] 의도적 결측값 포함 (전처리 테스트용)
 
-### 4. IMPORTS
+### 4. 임포트
 - [ ] 모든 import가 실제 사용됨
 - [ ] langgraph, langchain_anthropic import 존재
 
-### 5. LLM NODES
+### 5. LLM 노드
 - [ ] ChatAnthropic(model="claude-sonnet-4-6") 사용
 - [ ] 분석 노드 temperature=0.3
 - [ ] 리포트 노드 temperature=0.2
 
-### 6. EDGE FLOW
+### 6. 엣지 흐름
 - [ ] set_entry_point("validate")
 - [ ] validate → analyze → llm_analyze → report → END 순서
 
-### 7. RUNNABLE
+### 7. 실행 가능성
 - [ ] if __name__ == "__main__" 블록 존재
 - [ ] initial_state 정의 및 app.invoke() 호출
 - [ ] 최종 리포트 print
 
-### 8. REPORT
+### 8. 리포트
 - [ ] LLM 리포트 프롬프트에 5개 섹션 포함
 - [ ] 한국어 출력 지시
 

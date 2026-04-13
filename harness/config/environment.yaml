@@ -12,10 +12,10 @@ dependencies:
     - pyyaml>=6.0
 
 environment_variables:
-  required:
+  required:  # 필수 환경변수
     - ANTHROPIC_API_KEY
-  optional:
-    - LANGCHAIN_TRACING_V2  # LangSmith tracing
+  optional:  # 선택 환경변수
+    - LANGCHAIN_TRACING_V2  # LangSmith 추적용
     - LANGCHAIN_API_KEY
 
 managed_agent:

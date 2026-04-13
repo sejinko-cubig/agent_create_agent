@@ -32,4 +32,4 @@ llm_nodes:
 
 qa_loop:
   max_iterations: 3
-  pass_threshold: "all 8 checks pass"
+  pass_threshold: "8개 항목 모두 통과"
